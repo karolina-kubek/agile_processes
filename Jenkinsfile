@@ -1,10 +1,22 @@
+Jenkinsfile (Declarative Pipeline)
 pipeline {
-  agent any
-  stages {
-    stage('stage 1') {
-      steps {
-        bat(script: 'echoFile.bat', encoding: '@echo off echo %USERNAME% echo %DATE%')
-      }
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
     }
-  }
 }
